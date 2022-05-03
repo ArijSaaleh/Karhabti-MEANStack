@@ -10,7 +10,7 @@ var rpm;
 
 var client = mqtt.connect("mqtt://io.adafruit.com", {
   username: "arij",
-  password: "aio_OrKX55TjKBPZM95wKfsD64eUXOEb",
+  password: process.env['API_KEY'],
 });
 
 /** MQTT CONNECTION**/
