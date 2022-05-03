@@ -1,0 +1,36 @@
+<nav class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between mb-4">
+  <a href="/" class=" text-dark text-decoration-none" ><img src="../../assets/Karhabti.png" width="200" height="70" role="img"/></a>
+
+  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" *ngIf="!authenticated">
+      <li><a routerLink="/" class="nav-link px-2 link-secondary">Home</a></li>
+      <li><a routerLink="/" class="nav-link px-2 link-dark">Pricing</a></li>
+      <li><a routerLink="/" class="nav-link px-2 link-dark">FAQs</a></li>
+      <li><a routerLink="/" class="nav-link px-2 link-dark">About</a></li>
+      <a class="icon">
+        <i class="fa fa-bars"></i>
+      </a>
+  </ul>
+  <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" *ngIf="authenticated">
+    <li><a routerLink="/mycars" class="nav-link px-2 link-secondary">My Cars</a></li>
+    <li><a routerLink="/" class="nav-link px-2 link-dark">Eco-Driving</a></li>
+    <li><a routerLink="/" class="nav-link px-2 link-dark">Notifications</a></li>
+    <li><a routerLink="/" class="nav-link px-2 link-dark">Location</a></li>
+    <a class="icon">
+      <i class="fa fa-bars"></i>
+    </a>
+</ul>
+  <div class="col-md-2 text-end" *ngIf="!authenticated">
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-right mb-md-0">
+      <li><a  routerLink="/login" class="nav-link px-2 link-dark">Login</a></li>
+      <li><a routerLink="/register" class="nav-link px-2 link-dark"> Sign-up</a></li>
+    </ul>
+  </div>
+
+  <div class="col-md-2 text-end" *ngIf="authenticated">
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-right mb-md-0 font-weight-bold" >
+    <li><a  routerLink="/login" (click)="logout()" class="nav-link px-2 link-dark">Log Out</a></li>
+    </ul>
+
+  </div>
+</nav>
+

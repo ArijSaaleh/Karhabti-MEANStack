@@ -1,0 +1,20 @@
+nav{
+  background: #63636305;
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 18px;
+  position: fixed;
+  top:0;
+  width: 100%;
+  margin-bottom: 0px;
+}
+.nav a {display: block;}
+.nav a:hover{color: rgba(0, 0, 0, 0.068);}
+.nav a.icon{display:none;}
+
+@media (max-width: 700px) {
+.nav a{display:none;}
+.nav a.icon{
+  float:right;
+  display: block;
+}
+}

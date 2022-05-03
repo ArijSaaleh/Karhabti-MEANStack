@@ -1,0 +1,55 @@
+<div class="main">
+  <br /><br /><br />
+  <div class="name">
+    <br /><br />
+    <h2>{{ message }}</h2>
+  </div>
+
+  <div class="container-md" *ngIf="authenticated">
+    <div class="row">
+      <div class="col-3">
+        <h4 style="color: white">Vehicles List</h4>
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let veh of vehicles; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveVeh(veh, i)"
+          >
+            {{ veh.CarName }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-9">
+        <div *ngIf="currentVeh">
+          <h4>{{ currentVeh.CarName }}</h4>
+          <div>
+            <label><strong>Nom:</strong></label> {{ currentVeh.CarName }}
+          </div>
+          <div>
+            <label><strong>OBD:</strong></label>
+            {{ currentVeh.obd_token }}
+          </div>
+          <div>
+            <label><strong >Status:</strong></label>
+            <div *ngFor="let info of currentVeh.infos; let i = index">
+
+                 <div class="control-section">
+                  <div id="gauge"></div>
+              </div>
+
+            </div>
+
+            <p ></p>
+          </div>
+          <a class="" routerLink="/"> Edit </a>
+        </div>
+        <div *ngIf="!currentVeh">
+          <br />
+          <p style="text-align: center">Please select a Car...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br /><br /><br /><br />
+</div>
