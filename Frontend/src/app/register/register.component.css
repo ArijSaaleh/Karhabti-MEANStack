@@ -1,6 +1,11 @@
+.main {
+  width: 100%;
+  height: 18cm;
+  background: url('https://images.pexels.com/photos/221201/pexels-photo-221201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+}
+
 .register {
   background: -webkit-linear-gradient(left, #3931af, #00c6ff);
-  margin-top: 3%;
   padding: 3%;
 }
 

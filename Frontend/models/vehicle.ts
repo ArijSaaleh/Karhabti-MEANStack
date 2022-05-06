@@ -2,7 +2,7 @@ export class vehicle{
   CarName!:String;
   obd_token!:String;
   infos!:[{
-    SPEED: Number;
+    SPEED: number;
     RPM: Number;
     Date: Date;
   }]

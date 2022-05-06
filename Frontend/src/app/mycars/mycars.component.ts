@@ -16,6 +16,16 @@ export class MycarsComponent implements OnInit {
   currentVeh!: vehicle;
   currentIndex = -1;
   authenticated = false;
+
+    gaugeType = "semi";
+    gaugeValue = 80;
+    gaugeLabel = "Speed";
+    gaugeAppendText = "km/hr";
+    thresholdConfig = {
+      '0': {color: 'green'},
+      '40': {color: 'orange'},
+      '75.5': {color: 'red'}
+  };
   constructor(
     private userService: UserService,
     private vehService: VehicleService

@@ -31,16 +31,12 @@
             {{ currentVeh.obd_token }}
           </div>
           <div>
-            <label><strong >Status:</strong></label>
-            <div *ngFor="let info of currentVeh.infos; let i = index">
+            <label><strong>Status:</strong></label>
 
-                 <div class="control-section">
-                  <div id="gauge"></div>
-              </div>
+            <ngx-gauge [thresholds]="thresholdConfig" [value]="currentVeh.infos[currentVeh.infos.length - 1].SPEED ">
+              [label]="gaugeLabel" [append]="gaugeAppendText">
+            </ngx-gauge>
 
-            </div>
-
-            <p ></p>
           </div>
           <a class="" routerLink="/"> Edit </a>
         </div>

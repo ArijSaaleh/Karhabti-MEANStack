@@ -10,7 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MycarsComponent } from './mycars/mycars.component';
-
+import { NgxGaugeModule } from 'ngx-gauge';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +25,8 @@ import { MycarsComponent } from './mycars/mycars.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxGaugeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
