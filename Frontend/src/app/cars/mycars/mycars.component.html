@@ -8,22 +8,20 @@
     <br />
     <h4 style="color: rgb(73, 72, 72); text-align: center">Vehicles List</h4>
     <br />
-    <div *ngIf="vehicles==null">
+    <div *ngIf="vehicles == null">
       <h1 style="text-align: center">Please ADD a Car...</h1>
     </div>
     <div class="row" id="ads">
       <!-- Category Card -->
 
-      <div
-        class="col-md-4"
-        *ngFor="let veh of vehicles; let i = index"
+      <div class="col-md-4" *ngFor="let veh of vehicles; let i = index"
         [class.active]="i == currentIndex"
         (click)="setActiveVeh(veh, i)"
       >
         <div class="card rounded">
           <div class="card-image">
             <span class="card-notify-badge">{{ veh.CarName }}</span>
-            <span class="card-notify-year">{{ i + 1 }}</span>
+            <span class="card-notify-year"><i class="fad fa-car"></i></span>
             <img
               class="img-fluid"
               src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC011A021001.jpg&width=440&height=262"
@@ -111,7 +109,7 @@
       </div>
     </div>
   </div>-->
-  <br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 </div>
 <link
   href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"

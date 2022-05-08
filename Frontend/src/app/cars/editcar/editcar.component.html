@@ -1,55 +1,49 @@
 <div class="main">
-  <br><br><br>
-  <div class="container-md" >
+  <br /><br /><br />
+  <div class="container-md">
     <div *ngIf="currentVeh" class="edit-form">
-      <h4 style="text-align: center;">{{currentVeh.CarName}}</h4>
-      <form >
+      <h4 style="text-align: center">{{ currentVeh.CarName }}</h4>
+      <form>
         <div class="row editcar-form">
           <div class="col-md-6">
-        <div class="form-group">
-          <label for="CarName">CarName</label>
-          <input
-            type="text"
-            class="form-control"
-            id="CarName"
-            [(ngModel)]="currentVeh.CarName"
-            name="CarName"
-          />
-        </div>
-        <div class="form-group">
-          <label for="obd_token">OBD</label>
-          <input
-            type="text"
-            class="form-control"
-            id="obd_token"
-            [(ngModel)]="currentVeh.obd_token"
-            name="obd_token"
-          />
-        </div>
-        <div class="form-group">
-          <label for="Matricule">Matricule</label>
-          <input
-            type="text"
-            class="form-control"
-            id="Matricule"
-            [(ngModel)]="currentVeh.Matricule"
-            name="Matricule"
-          />
+            <div class="form-group">
+              <label for="CarName">CarName</label>
+              <input
+                type="text"
+                class="form-control"
+                id="CarName"
+                [(ngModel)]="currentVeh.CarName"
+                name="CarName"
+              />
+            </div>
+            <div class="form-group">
+              <label for="obd_token">OBD</label>
+              <input
+                type="text"
+                class="form-control"
+                id="obd_token"
+                [(ngModel)]="currentVeh.obd_token"
+                name="obd_token"
+              />
+            </div>
+            <div class="form-group">
+              <label for="Matricule">Matricule</label>
+              <input
+                type="text"
+                class="form-control"
+                id="Matricule"
+                [(ngModel)]="currentVeh.Matricule"
+                name="Matricule"
+              />
+            </div>
+            <button type="button" class="btn btn-danger" (click)="deleteVeh()">Delete</button>
+            <button type="button" class="btn btn-success" (click)="updateCar()">Update</button>
+          </div>
         </div>
 
-      <button  (click)="deleteVeh()">
-        Delete
-      </button>
-      <button
-        type="submit"
-        (click)="updateCar()"
-      >
-        Update
-      </button>
+      </form>
+      <!-- Vertically centered modal -->
 
-    </div>
-    </div>
-    </form>
       <p>{{ message }}</p>
     </div>
     <div *ngIf="!currentVeh">
@@ -57,5 +51,5 @@
       <p>Cannot access this Tutorial...</p>
     </div>
   </div>
-  <br><br><br><br><br><br>
-  </div>
+  <br /><br /><br /><br /><br /><br />
+</div>
