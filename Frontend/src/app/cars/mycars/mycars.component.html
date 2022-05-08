@@ -1,0 +1,122 @@
+<div class="main">
+  <br /><br /><br />
+  <div class="name">
+    <br /><br />
+    <h2>{{ message }}</h2>
+  </div>
+  <div class="container-md" *ngIf="authenticated">
+    <br />
+    <h4 style="color: rgb(73, 72, 72); text-align: center">Vehicles List</h4>
+    <br />
+    <div *ngIf="vehicles==null">
+      <h1 style="text-align: center">Please ADD a Car...</h1>
+    </div>
+    <div class="row" id="ads">
+      <!-- Category Card -->
+
+      <div
+        class="col-md-4"
+        *ngFor="let veh of vehicles; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveVeh(veh, i)"
+      >
+        <div class="card rounded">
+          <div class="card-image">
+            <span class="card-notify-badge">{{ veh.CarName }}</span>
+            <span class="card-notify-year">{{ i + 1 }}</span>
+            <img
+              class="img-fluid"
+              src="https://imageonthefly.autodatadirect.com/images/?USER=eDealer&PW=edealer872&IMG=USC80HOC011A021001.jpg&width=440&height=262"
+              alt="Alternate Text"
+            />
+          </div>
+          <div class="card-image-overlay m-auto">
+            <span class="card-detail-badge">{{ veh.Matricule }}</span>
+            <button
+              class="card-detail-but"
+              routerLink="/editcar/{{ currentVeh._id }}"
+            >
+              EDIT
+            </button>
+            <button class="card-detail-but" (click)="deleteVeh()">
+              Delete
+            </button>
+          </div>
+          <div class="card-body text-center">
+            <div class="ad-title m-auto"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4" style="margin-top: 55px">
+        <div>
+          <button class="rounded-circle" style="border: none">
+            <img
+              class="rounded-circle"
+              src="https://png.pngtree.com/element_our/20190601/ourlarge/pngtree-plus-icon-image_1338383.jpg"
+              alt="Generic placeholder image"
+              width="140"
+              height="140"
+              routerLink="/addcar"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--
+    <div class="container-md" *ngIf="authenticated">
+    <div class="row">
+      <div class="col-3">
+        <h4 style="color: white">Vehicles List</h4>
+        <ul class="list-group">
+          <li
+            class="list-group-item"
+            *ngFor="let veh of vehicles; let i = index"
+            [class.active]="i == currentIndex"
+            (click)="setActiveVeh(veh, i)"
+          >
+            {{ veh.CarName }}
+          </li>
+        </ul>
+      </div>
+      <div class="col-9">
+        <div *ngIf="currentVeh">
+
+          <h4>{{ currentVeh.CarName }}</h4> <p> iiiddd {{currentVeh._id}}</p>
+          <div>
+            <label><strong>Nom:</strong></label> {{ currentVeh.CarName }}
+          </div>
+          <div>
+            <label><strong>OBD:</strong></label>
+            {{ currentVeh.obd_token }}
+          </div>
+          <div>
+            <label><strong>Status:</strong></label>
+
+            <!--
+            <ngx-gauge [thresholds]="thresholdConfig" *ngIf="currentVeh.infos[currentVeh.infos.length - 1].SPEED !==undefined" [value]="currentVeh.infos[currentVeh.infos.length - 1].SPEED ">
+              [label]="gaugeLabel" [append]="gaugeAppendText">
+            </ngx-gauge>
+            <ngx-gauge [thresholds]="thresholdConfig" *ngIf="currentVeh.infos[currentVeh.infos.length - 1].SPEED == undefined" [value]=0>
+              [label]="gaugeLabel" [append]="gaugeAppendText">
+            </ngx-gauge>
+          </div>
+          <a class="badge badge-warning" routerLink="/editcar/{{currentVeh._id}}"> Edit </a>
+        </div>
+        <div *ngIf="!currentVeh">
+          <br />
+          <p style="text-align: center">Please select a Car...</p>
+          <a class="" routerLink="/addcar">Add</a>
+        </div>
+      </div>
+    </div>
+  </div>-->
+  <br /><br /><br /><br /><br />
+</div>
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

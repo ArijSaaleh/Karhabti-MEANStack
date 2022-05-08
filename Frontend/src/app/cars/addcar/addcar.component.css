@@ -1,0 +1,18 @@
+.main {
+  width: 100%;
+  background-image: url('https://images.pexels.com/photos/115145/pexels-photo-115145.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1380');
+}
+.container-md {
+  background-color: rgba(187, 187, 187, 0.705);
+  width: auto;
+  height: 450px;
+  border-radius: 12px;
+}
+.addcar-form{
+  margin-top: 50px;
+  margin-left: 400px;
+}
+
+.form-group{
+  margin-bottom: 10px;
+}

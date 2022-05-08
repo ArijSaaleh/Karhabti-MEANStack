@@ -9,8 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MycarsComponent } from './mycars/mycars.component';
+import { MycarsComponent } from './cars/mycars/mycars.component';
 import { NgxGaugeModule } from 'ngx-gauge';
+import { AddcarComponent } from './cars/addcar/addcar.component';
+import { EditcarComponent } from './cars/editcar/editcar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,9 @@ import { NgxGaugeModule } from 'ngx-gauge';
     RegisterComponent,
     HomeComponent,
     NavComponent,
-    MycarsComponent
+    MycarsComponent,
+    AddcarComponent,
+    EditcarComponent
   ],
   imports: [
     BrowserModule,

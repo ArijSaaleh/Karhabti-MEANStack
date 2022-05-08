@@ -2,25 +2,17 @@
   width: 100%;
   background-image: url('https://images.pexels.com/photos/115145/pexels-photo-115145.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1380');
 }
-
 .container-md {
   background-color: rgba(187, 187, 187, 0.705);
   width: auto;
   height: 450px;
   border-radius: 12px;
 }
-
-.name {
-  color: rgb(180, 12, 12);
-  text-align: center;
+.editcar-form{
+  margin-top: 50px;
+  margin-left: 400px;
 }
 
-.col-3 {
-  border-radius: 12px;
-  background-color: rgba(2, 1, 43, 0.219);
-  height: 450px;
-}
-
-.col-3 h4 {
-  text-align: center;
+.form-group{
+  margin-bottom: 10px;
 }

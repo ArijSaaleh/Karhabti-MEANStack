@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../services/user.service';
-import { Emitters } from '../emitters/emitters';
-import { VehicleService } from '../services/vehicle.service';
+import { UserService } from '../../services/user.service';
+import { Emitters } from '../../emitters/emitters';
+import { VehicleService } from '../../services/vehicle.service';
 import { vehicle } from 'models/vehicle';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class MycarsComponent implements OnInit {
   };
   constructor(
     private userService: UserService,
-    private vehService: VehicleService
+    private vehService: VehicleService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -70,5 +72,16 @@ export class MycarsComponent implements OnInit {
   setActiveVeh(veh: any, index: any): void {
     this.currentVeh = veh;
     this.currentIndex = index;
+  }
+  deleteVeh(): void {
+    this.vehService.delete(this.currentVeh._id).subscribe(
+      (response) => {
+        console.log(response);
+        this.router.navigate(['/mycars']);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

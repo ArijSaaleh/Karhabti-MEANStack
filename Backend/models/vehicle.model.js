@@ -2,10 +2,11 @@ const mongoose = require("mongoose");
 const vehicles = new mongoose.Schema({
   CarName: { type: String, required: true },
   obd_token: { type: String, required: true, unique:[true, "OBD DUPLICATED"]},
+  Matricule:{type:String},
   infos: [
     {
-      SPEED: Number,
-      RPM: Number,
+      SPEED:{type:Number, default:0} ,
+      RPM: {type:Number, default:0},
       Date: Date,
     },
   ],

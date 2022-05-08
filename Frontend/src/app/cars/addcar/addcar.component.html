@@ -1,0 +1,51 @@
+<div class="main">
+  <br><br><br>
+<div class="container-md">
+  <br><h2 style="text-align: center;">Add a new car</h2>
+<form [formGroup]="form" (submit)="submit()">
+  <div class="row addcar-form">
+    <div class="col-md-6">
+      <div class="form-group">
+        <input
+          formControlName="CarName"
+          type="text"
+          class="form-control"
+          placeholder="Car Name *"
+          value=""
+        />
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="obd_token"
+          type="text"
+          class="form-control"
+          placeholder="OBD TOKEN *"
+          value=""
+        />
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="Matricule"
+          type="text"
+          class="form-control"
+          placeholder="Matricule"
+          value=""
+        />
+      </div>
+
+      <div class="form-group">
+        <input
+          formControlName="Cartegrise"
+          type="text"
+          class="form-control"
+          placeholder="Numero Carte grise *"
+          value=""
+        />
+      </div>
+      <input type="submit" class="btnAddCar" value="Add" />
+    </div>
+  </div>
+</form>
+</div>
+<br><br><br><br><br><br>
+</div>

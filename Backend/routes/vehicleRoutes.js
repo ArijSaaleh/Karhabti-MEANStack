@@ -3,7 +3,7 @@ var router = express.Router();
 var vehicle = require("../models/vehicle.model");
 var mqtt = require("mqtt");
 const { Authentication } = require("../middleware/auth");
-
+var user = require("../models/user.model");
 var obd;
 var speed;
 var rpm;
@@ -47,6 +47,14 @@ router.get("/all", async (req, res) => {
   return res.send(resultat);
 });
 /**
+ * GET: Get One Car
+ */
+router.get("/onecar/:id", Authentication, async(req,res)=>{
+  const resultat = await vehicle.findById(req.params.id);
+  return res.send(resultat);
+
+});
+/**
  * GET: Get all vehicles of a specific user
  */
 router.get("/listmycars", Authentication, (req, res) => {
@@ -76,6 +84,7 @@ router.post("/add", Authentication, async (req, res) => {
         let newcar = new vehicle({
           CarName: req.body.CarName,
           obd_token: req.body.obd_token,
+          Matricule: req.body.Matricule,
           _userID: req.user_id,
         });
         newcar.save().then((newvehDoc) => {
@@ -92,13 +101,14 @@ router.post("/add", Authentication, async (req, res) => {
 router.put("/update/:id", Authentication, (req, res) => {
   vehicle.findOneAndUpdate(
     {
-      id: req.params.id,
+      _id: req.params.id,
       _userID: req.user_id,
     },
     {
       $set: req.body,
     },
     (error, data) => {
+      console.log("dataaaa : " ,data);
       if (error) {
         return next(error);
         console.log(error);
